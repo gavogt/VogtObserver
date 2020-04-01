@@ -20,6 +20,7 @@ namespace VogtObserver
             {
                 try
                 {
+                    Console.Clear();
                     generator.GetRandomInt();
                     dateTime.Update();
                     sum.Update();
