@@ -17,6 +17,7 @@ namespace VogtObserver
         public void Update()
         {
             _randomInt = _generator.GetRandomInt()+_randomInt;
+            Console.WriteLine($"Sum: {_randomInt}");
         }
     }
 }
