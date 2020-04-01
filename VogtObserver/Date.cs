@@ -18,7 +18,10 @@ namespace VogtObserver
         public void Update()
         {
             _randomInt = _generator.GetRandomInt();
-            Console.WriteLine($"Dates added: {_dateTime.AddDays(_randomInt)}");
+
+            string formatDate = Convert.ToString(_dateTime.AddDays(_randomInt));
+
+            Console.WriteLine("Dates added: {0:yyyy MM d}", formatDate);
         }
     }
 }
