@@ -4,7 +4,11 @@ using System.Text;
 
 namespace VogtObserver
 {
-    class Sum
+    class Sum : IObserver
     {
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

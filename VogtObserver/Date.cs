@@ -4,7 +4,11 @@ using System.Text;
 
 namespace VogtObserver
 {
-    class Date
+    class Date : IObserver
     {
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
