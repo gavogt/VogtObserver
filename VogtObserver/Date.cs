@@ -6,9 +6,19 @@ namespace VogtObserver
 {
     class Date : IObserver
     {
+        private Generator _generator;
+        private DateTime _dateTime;
+        private int _randomInt;
+
+        public Date(Generator generator)
+        {
+            _generator = generator;
+        }
+
         public void Update()
         {
-            throw new NotImplementedException();
+            _randomInt = _generator.GetRandomInt();
+            Console.WriteLine($"{_dateTime.AddDays(_randomInt)}");
         }
     }
 }

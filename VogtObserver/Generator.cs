@@ -6,25 +6,32 @@ namespace VogtObserver
 {
     class Generator : IObservable
     {
-        public void Add(IObservable o)
+
+          private List<IObserver> _observers;
+
+        public void Add(IObserver o)
         {
-            throw new NotImplementedException();
+            _observers.Add(o);
         }
 
         public void Notify()
         {
-            throw new NotImplementedException();
+            foreach (IObserver o in _observers)
+            {
+                o.Update();
+            }
         }
 
-        public void Remove(IObservable o)
+        public void Remove(IObserver o)
         {
-            throw new NotImplementedException();
+            _observers.Remove(o);
         }
 
-        public void GetState()
+        public int GetRandomInt()
         {
+            var random = new Random();
 
+            return random.Next(1, 1000);
         }
-
     }
 }
