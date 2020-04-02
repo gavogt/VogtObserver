@@ -6,8 +6,6 @@ namespace VogtObserver
 {
     class Sum : IObserver
     {
-        private int _randomInt;
-
         public Sum()
         {
 
