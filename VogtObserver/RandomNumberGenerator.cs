@@ -8,10 +8,12 @@ namespace VogtObserver
     {
 
           private List<IObserver> _observers;
+        private Random _random = new Random();
 
         public void Add(IObserver o)
         {
             _observers.Add(o);
+            _random = new Random();
         }
 
         public void Notify()
@@ -29,9 +31,7 @@ namespace VogtObserver
 
         public int GetRandomInt()
         {
-            var random = new Random();
-
-            return random.Next(1, 1000);
+            return _random.Next(1, 1000);
         }
     }
 }
