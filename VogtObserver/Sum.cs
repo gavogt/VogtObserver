@@ -4,7 +4,17 @@ using System.Text;
 
 namespace VogtObserver
 {
-    class Sum
+    class Sum : IObserver
     {
+        public Sum()
+        {
+
+        }
+
+        public void Update(int random)
+        {
+
+            Console.WriteLine($"Sum: {random}");
+        }
     }
 }
