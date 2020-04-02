@@ -25,10 +25,7 @@ namespace VogtObserver
                 {
                     Console.Clear();
 
-                    generator.GetRandomInt();
-
-                    //dateTime.Update();
-                    //sum.Update();
+                    generator.Notify();
 
                     Thread.Sleep(2000);
                 }

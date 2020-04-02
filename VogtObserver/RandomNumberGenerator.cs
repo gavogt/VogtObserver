@@ -7,7 +7,7 @@ namespace VogtObserver
     class RandomNumberGenerator : IObservable
     {
 
-          private List<IObserver> _observers;
+        private List<IObserver> _observers = new List<IObserver>();
         private Random _random = new Random();
 
         public void Add(IObserver o)
