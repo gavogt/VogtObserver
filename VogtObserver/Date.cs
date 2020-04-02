@@ -7,7 +7,6 @@ namespace VogtObserver
     class Date : IObserver
     {
         private DateTime _dateTime = DateTime.Now;
-        private int _randomInt;
 
         public Date()
         {
@@ -16,9 +15,8 @@ namespace VogtObserver
 
         public void Update(int random)
         {
-            _randomInt = random;
 
-            string formatDate = Convert.ToString(_dateTime.AddDays(_randomInt));
+            string formatDate = Convert.ToString(_dateTime.AddDays(random));
 
             Console.WriteLine("Dates added: {0:yyyy MM d}", formatDate);
         }
