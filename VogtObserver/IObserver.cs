@@ -6,6 +6,6 @@ namespace VogtObserver
 {
     interface IObserver
     {
-        public void Update();
+        public void Update(int random);
     }
 }

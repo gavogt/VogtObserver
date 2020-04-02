@@ -18,7 +18,7 @@ namespace VogtObserver
         {
             foreach (IObserver o in _observers)
             {
-                o.Update();
+                o.Update(GetRandomInt());
             }
         }
 

@@ -8,8 +8,8 @@ namespace VogtObserver
         static void Main(string[] args)
         {
             RandomNumberGenerator generator = new RandomNumberGenerator();
-            Date dateTime = new Date(generator);
-            Sum sum = new Sum(generator);
+            Date dateTime = new Date();
+            Sum sum = new Sum();
 
             Run(generator, dateTime, sum);
         }

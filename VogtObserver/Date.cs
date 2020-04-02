@@ -6,18 +6,17 @@ namespace VogtObserver
 {
     class Date : IObserver
     {
-        private RandomNumberGenerator _generator;
         private DateTime _dateTime = DateTime.Now;
         private int _randomInt;
 
-        public Date(RandomNumberGenerator generator)
+        public Date()
         {
-            _generator = generator;
+            
         }
 
-        public void Update()
+        public void Update(int random)
         {
-            _randomInt = _generator.GetRandomInt();
+            _randomInt = random;
 
             string formatDate = Convert.ToString(_dateTime.AddDays(_randomInt));
 
