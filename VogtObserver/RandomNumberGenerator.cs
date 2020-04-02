@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VogtObserver
 {
-    class Generator : IObservable
+    class RandomNumberGenerator : IObservable
     {
 
           private List<IObserver> _observers;

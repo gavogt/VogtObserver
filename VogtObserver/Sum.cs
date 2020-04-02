@@ -6,10 +6,10 @@ namespace VogtObserver
 {
     class Sum : IObserver
     {
-        private Generator _generator;
+        private RandomNumberGenerator _generator;
         private int _randomInt;
 
-        public Sum(Generator generator)
+        public Sum(RandomNumberGenerator generator)
         {
             _generator = generator;
         }

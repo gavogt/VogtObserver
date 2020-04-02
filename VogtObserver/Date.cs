@@ -6,11 +6,11 @@ namespace VogtObserver
 {
     class Date : IObserver
     {
-        private Generator _generator;
+        private RandomNumberGenerator _generator;
         private DateTime _dateTime = DateTime.Now;
         private int _randomInt;
 
-        public Date(Generator generator)
+        public Date(RandomNumberGenerator generator)
         {
             _generator = generator;
         }
