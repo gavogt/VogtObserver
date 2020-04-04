@@ -7,10 +7,12 @@ namespace VogtObserver
     class Date : IObserver
     {
         private DateTime _dateTime = DateTime.Now;
+        private readonly RandomNumberGenerator _randomNumberGenerator;
 
-        public Date()
+        public Date(RandomNumberGenerator randomNumberGenerator)
         {
-            
+            _randomNumberGenerator = randomNumberGenerator;
+            _randomNumberGenerator.Add(this);
         }
 
         public void Update(int random)
