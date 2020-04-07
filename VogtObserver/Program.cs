@@ -10,31 +10,23 @@ namespace VogtObserver
             RandomNumberGenerator generator = new RandomNumberGenerator();
             Date dateTime = new Date();
             Sum sum = new Sum();
+            generator.Add(dateTime);
+            generator.Add(sum);
 
             Run(generator, dateTime, sum);
         }
 
         public static void Run(RandomNumberGenerator generator, Date dateTime, Sum sum)
         {
-            generator.Add(dateTime);
-            generator.Add(sum);
 
-            for (int i = 1; i <=20 ; i++)
+            for (int i = 0; i < 20; i++)
             {
-                try
-                {
-                    Console.Clear();
-
-                    generator.Notify();
-
-                    Thread.Sleep(2000);
-                }
-                catch
-                {
-                    Console.WriteLine("Error!");
-                }
-
+                Console.Clear();
+                generator.ChangeToRandomNumber();
+                Thread.Sleep(2000);
             }
+
+
         }
     }
 }

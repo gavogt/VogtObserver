@@ -9,6 +9,7 @@ namespace VogtObserver
         public Sum()
         {
 
+
         }
 
         public void Update(int random)

@@ -10,7 +10,8 @@ namespace VogtObserver
 
         public Date()
         {
-            
+
+
         }
 
         public void Update(int random)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace VogtObserver
 {
@@ -16,12 +17,16 @@ namespace VogtObserver
             _random = new Random();
         }
 
-        public void Notify()
+        public void Notify(int number)
         {
+
             foreach (IObserver o in _observers)
             {
-                o.Update(GetRandomInt());
+
+                o.Update(number);
             }
+
+
         }
 
         public void Remove(IObserver o)
@@ -29,9 +34,21 @@ namespace VogtObserver
             _observers.Remove(o);
         }
 
-        public int GetRandomInt()
+        public int ChangeToRandomNumber()
         {
-            return _random.Next(1, 1000);
+            int number = 0;
+            try
+            {
+                number = _random.Next(1, 1000);
+                Notify(number);
+
+            }
+            catch
+            {
+                Console.WriteLine("Recursion issue!");
+            }
+
+            return number;
         }
     }
 }
