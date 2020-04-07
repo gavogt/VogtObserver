@@ -6,11 +6,10 @@ namespace VogtObserver
 {
     class Sum : IObserver
     {
-        private readonly RandomNumberGenerator _randomNumberGenerator;
-        public Sum(RandomNumberGenerator randomNumberGenerator)
+        public Sum()
         {
-            _randomNumberGenerator = randomNumberGenerator;
-            _randomNumberGenerator.Add(this);
+
+
         }
 
         public void Update(int random)

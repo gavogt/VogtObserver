@@ -29,23 +29,18 @@ namespace VogtObserver
 
         }
 
-        public void NumberChanged(int number)
-        {
-            Notify(number);
-        }
-
         public void Remove(IObserver o)
         {
             _observers.Remove(o);
         }
 
-        public int GetRandomInt()
+        public int ChangeToRandomNumber()
         {
             int number = 0;
             try
             {
                 number = _random.Next(1, 1000);
-                NumberChanged(number);
+                Notify(number);
 
             }
             catch
