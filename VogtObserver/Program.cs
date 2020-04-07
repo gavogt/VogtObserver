@@ -20,22 +20,14 @@ namespace VogtObserver
             dateTime = new Date(generator);
             sum = new Sum(generator);
 
-            Console.Clear();
-            generator.GetRandomInt();
-            Thread.Sleep(2000);
-
-            for (int i = 1; i <=1 ; i++)
+            for (int i = 0; i < 20; i++)
             {
-                try
-                {
-
-                }
-                catch
-                {
-                    Console.WriteLine("Error!");
-                }
-
+                Console.Clear();
+                generator.GetRandomInt();
+                Thread.Sleep(2000);
             }
+
+
         }
     }
 }

@@ -17,22 +17,21 @@ namespace VogtObserver
             _random = new Random();
         }
 
-        public void Notify()
+        public void Notify(int number)
         {
-            for (int i = 0; i < 2; i++)
+
+            foreach (IObserver o in _observers)
             {
-                foreach (IObserver o in _observers)
-                {
-                    
-                    o.Update(GetRandomInt());
-                }
+
+                o.Update(number);
             }
+
 
         }
 
-        public void NumberChanged()
+        public void NumberChanged(int number)
         {
-            Notify();
+            Notify(number);
         }
 
         public void Remove(IObserver o)
@@ -42,10 +41,19 @@ namespace VogtObserver
 
         public int GetRandomInt()
         {
+            int number = 0;
+            try
+            {
+                number = _random.Next(1, 1000);
+                NumberChanged(number);
 
-            NumberChanged();
-            return _random.Next(1, 1000);
+            }
+            catch
+            {
+                Console.WriteLine("Recursion issue!");
+            }
 
+            return number;
         }
     }
 }
